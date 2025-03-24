@@ -1,5 +1,7 @@
 ## Hi there 👋
 
+Please wait until loading is complete, so that the promotional banner can be seen.
+
 <!--
 **testing-iod/testing-iod** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
