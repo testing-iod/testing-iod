@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GA4/GTM Recruitment Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      background-color: #f8f8f8;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    .header h1 {
+      margin: 0;
+    }
+    .banner {
+      margin: 20px auto;
+      display: block;
+      max-width: 100%;
+      cursor: pointer;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin: 20px;
+    }
+    .product-card {
+      border: 1px solid #ddd;
+      padding: 15px;
+      width: 200px;
+      text-align: center;
+      border-radius: 5px;
+    }
+    .product-card h3 {
+      margin-top: 0;
+      cursor: pointer;
+      color: #007bff;
+    }
+    .product-card button {
+      margin-top: 10px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    .form-container {
+      margin: 20px;
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    input[type="text"],
+    input[type="number"] {
+      padding: 8px;
+      width: 200px;
+      margin-right: 10px;
+    }
+    button.submit-btn {
+      padding: 8px 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Judul Page -->
+  <div class="header">
+    <h1>GA4/GTM Recruitment Test</h1>
+    <p>This is a simple website for testing GA4, GTM, and Data Layer implementation.</p>
+  </div>
+
+  <!-- Banner Promotion (dapat diklik) -->
+  <div style="text-align:center;">
+    <img src="https://via.placeholder.com/800x200?text=Promotion+Banner" alt="Promotion Banner (Click me if you want PROMO !)" class="banner" id="bannerPromotion">
+  </div>
+
+  <!-- Product Cards -->
+  <div class="products">
+    <div class="product-card">
+      <h3 class="product-name" data-product="Product 1">Product 1</h3>
+      <button class="add-to-cart" data-product="Product 1">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <h3 class="product-name" data-product="Product 2">Product 2</h3>
+      <button class="add-to-cart" data-product="Product 2">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <h3 class="product-name" data-product="Product 3">Product 3</h3>
+      <button class="add-to-cart" data-product="Product 3">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Form Input -->
+  <div class="form-container">
+    <h2>Submit Your Information</h2>
+    <div class="form-group">
+      <label for="nameInput">Nama:</label>
+      <input type="text" id="nameInput" placeholder="Masukkan nama">
+    </div>
+    <div class="form-group">
+      <label for="jumlahPacarInput">Jumlah Pacar:</label>
+      <input type="number" id="jumlahPacarInput" placeholder="Masukkan jumlah pacar">
+    </div>
+    <div class="form-group">
+        <label for="price">Price :</label>
+        <input type="number" id="price" placeholder="Masukkan jumlah harga">
+      </div>
+    <button id="submitForm" class="submit-btn">Submit Form</button>
+  </div>
+
+  <script>
+    // Fungsi notifikasi sederhana
+    function notify(message) {
+      alert(message);
+    }
+
+    // Event klik untuk banner promotion
+    document.getElementById('bannerPromotion').addEventListener('click', function() {
+      notify('Banner Promotion Clicked!');
+    });
+
+    // Event klik untuk product name
+    document.querySelectorAll('.product-name').forEach(function(element) {
+      element.addEventListener('click', function() {
+        var product = this.getAttribute('data-product');
+        notify(product + ' clicked!');
+      });
+    });
+
+    // Event klik untuk tombol add to cart
+    document.querySelectorAll('.add-to-cart').forEach(function(button) {
+      button.addEventListener('click', function() {
+        var product = this.getAttribute('data-product');
+        notify('Add to Cart: ' + product);
+      });
+    });
+
+    // Event klik untuk submit form
+    document.getElementById('submitForm').addEventListener('click', function() {
+      var name = document.getElementById('nameInput').value;
+      var jumlahPacar = document.getElementById('jumlahPacarInput').value;
+      var price = document.getElementById('price').value;
+      notify('Form Submitted! Nama: ' + name + ', Jumlah Pacar: ' + jumlahPacar + ', Price: ' + price);
+    });
+  </script>
+</body>
+</html>
